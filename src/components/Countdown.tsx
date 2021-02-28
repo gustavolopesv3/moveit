@@ -1,9 +1,8 @@
-import { useState, useEffect, useContext } from 'react';
-import { ChallengesContext } from '../contexts/ChallengesContext';
-import { CountdownContext } from '../contexts/CountDownContext';
+import { useContext } from 'react';
+import { CountdownContext } from '../contexts/CountdownContext';
 import styles from '../styles/components/Countdown.module.css';
 
-export function Countdow() {
+export function Countdown() {
   const {
     minutes,
     seconds,
@@ -12,6 +11,7 @@ export function Countdow() {
     startCountdown,
     resetCountdown,
   } = useContext(CountdownContext);
+
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
   const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
 
@@ -28,9 +28,8 @@ export function Countdow() {
           <span>{secondRight}</span>
         </div>
       </div>
-
       {hasFinished ? (
-        <button disabled type="button" className={`${styles.countdownButton}`}>
+        <button disabled className={styles.countdownButton}>
           Ciclo encerrado
         </button>
       ) : (
@@ -41,7 +40,7 @@ export function Countdow() {
               type="button"
               className={`${styles.countdownButton} ${styles.countdownButtonActive}`}
             >
-              'Abandonar Ciclo'
+              Abandonar ciclo
             </button>
           ) : (
             <button
@@ -49,7 +48,7 @@ export function Countdow() {
               type="button"
               className={styles.countdownButton}
             >
-              'Iniciar Ciclo'
+              Iniciar ciclo
             </button>
           )}
         </>

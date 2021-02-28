@@ -1,6 +1,6 @@
 .container {
   height: 100vh;
-  max-width: 998px;
+  max-width: 992px;
   margin: 0 auto;
   padding: 2.5rem 2rem;
 
@@ -15,4 +15,5 @@
   grid-template-columns: 1fr 1fr;
   gap: 6.25rem;
   align-content: center;
+  padding-top: 2rem;
 }

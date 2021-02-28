@@ -16,7 +16,7 @@
   max-width: 400px;
   padding: 2rem 3rem;
   border-radius: 5px;
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
   text-align: center;
   position: relative;
 }
@@ -37,6 +37,7 @@
 .container p {
   font-size: 1.25rem;
   color: var(--text);
+  margin-top: 0.25rem;
 }
 
 .container button {
@@ -45,4 +46,5 @@
   top: 0.5rem;
   background: transparent;
   border: 0;
+  font-size: 0;
 }
