@@ -24,7 +24,7 @@ export function ChallengeBox() {
         <div className={styles.challengeActive}>
           <header>{activeChallenge.amount}</header>
           <main>
-            <img src="icons/body.svg" alt="" />
+            <img src={`icons/${activeChallenge.type}.svg`} alt="Novo desafio" />
             <strong>Novo desafio</strong>
             <p>{activeChallenge.description}</p>
           </main>

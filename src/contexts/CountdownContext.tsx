@@ -1,5 +1,4 @@
 import {
-  Children,
   createContext,
   ReactNode,
   useContext,
@@ -26,22 +25,23 @@ let countdownTimeout: NodeJS.Timeout;
 export function CountdownProvider({ children }: CountdownProviderPropos) {
   const { startNewChallenge } = useContext(ChallengesContext);
   const [time, setTime] = useState(0.1 * 60);
-  const [isActive, setISActive] = useState(false);
+  const [isActive, setIsAcative] = useState(false);
   const [hasFinished, SetHasFinished] = useState(false);
 
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
 
   function startCountdown() {
-    setISActive(true);
+    setIsAcative(true);
   }
 
   function resetCountdown() {
     clearTimeout(countdownTimeout);
-    setISActive(false);
+    setIsAcative(false);
     setTime(0.1 * 60);
     SetHasFinished(false);
   }
+
   useEffect(() => {
     if (isActive && time > 0) {
       countdownTimeout = setTimeout(() => {
@@ -49,7 +49,7 @@ export function CountdownProvider({ children }: CountdownProviderPropos) {
       }, 1000);
     } else if (isActive && time == 0) {
       SetHasFinished(true);
-      setISActive(false);
+      setIsAcative(false);
       startNewChallenge();
     }
   }, [isActive, time]);
